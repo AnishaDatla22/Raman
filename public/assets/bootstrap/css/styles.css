@@ -1,0 +1,13 @@
+body{
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.middleSec {
+    background: #fff;
+    min-height: 400px;
+    border-top-left-radius: 3%;
+    margin-top: -21px;
+    border-top-right-radius: 3%;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+}

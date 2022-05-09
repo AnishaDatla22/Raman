@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background: linear-gradient(to right, #00adee 0%,#225daa 100%);
+  font-family: 'Red Hat Display', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow:hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

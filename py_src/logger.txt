@@ -1,0 +1,424 @@
+2022-04-19 13:50:30.382 | INFO     | uvicorn.main:serve:397 - Started server process [31672]
+2022-04-19 13:50:30.383 | INFO     | uvicorn.lifespan.on:startup:22 - Waiting for application startup.
+2022-04-19 13:50:30.383 | INFO     | uvicorn.lifespan.on:startup:34 - Application startup complete.
+2022-04-19 13:50:45.913 | INFO     | uvicorn.main:shutdown:527 - Shutting down
+2022-04-19 13:51:33.303 | INFO     | uvicorn.main:serve:397 - Started server process [9536]
+2022-04-19 13:51:33.305 | INFO     | uvicorn.lifespan.on:startup:22 - Waiting for application startup.
+2022-04-19 13:51:33.305 | INFO     | uvicorn.lifespan.on:startup:34 - Application startup complete.
+2022-04-19 13:51:36.618 | INFO     | uvicorn.main:shutdown:527 - Shutting down
+2022-04-19 13:56:08.912 | INFO     | uvicorn.main:serve:397 - Started server process [30632]
+2022-04-19 13:56:08.913 | INFO     | uvicorn.lifespan.on:startup:22 - Waiting for application startup.
+2022-04-19 13:56:08.913 | INFO     | uvicorn.lifespan.on:startup:34 - Application startup complete.
+2022-04-19 13:57:20.979 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:59643 - "GET /userValidation?userName=admin&password=admin HTTP/1.1" 200
+2022-04-19 13:57:21.003 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:59643 - "GET /sensorTest HTTP/1.1" 404
+2022-04-19 13:57:22.511 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:59643 - "GET /sensorTest HTTP/1.1" 404
+2022-04-19 13:57:23.969 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:59643 - "GET /scanReferrenceData?name=ref&start=900&end=1700&repeat=5 HTTP/1.1" 500
+2022-04-19 13:57:23.970 | ERROR    | uvicorn.protocols.http.httptools_impl:run_asgi:388 - Exception in ASGI application
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               |     |   -> 300
+               |     -> 3
+               -> <function _main at 0x00000144FF12FC70>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           |    |          -> 300
+           |    -> <function BaseProcess._bootstrap at 0x00000144FF08A4D0>
+           -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 315, in _bootstrap
+    self.run()
+    |    -> <function BaseProcess.run at 0x00000144FF089B40>
+    -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    |    |        |    |        |    -> {'config': <uvicorn.config.Config object at 0x00000144FECBA8C0>, 'target': <bound method Server.run of <uvicorn.main.Server o...
+    |    |        |    |        -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+    |    |        |    -> ()
+    |    |        -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+    |    -> <function subprocess_started at 0x00000144FFC5E560>
+    -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\subprocess.py", line 61, in subprocess_started
+    target(sockets=sockets)
+    |              -> [<socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    -> <bound method Server.run of <uvicorn.main.Server object at 0x00000144FECBA890>>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\main.py", line 382, in run
+    loop.run_until_complete(self.serve(sockets=sockets))
+    |    |                  |    |             -> [<socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    |    |                  |    -> <function Server.serve at 0x00000144FFCA3F40>
+    |    |                  -> <uvicorn.main.Server object at 0x00000144FECBA890>
+    |    -> <function BaseEventLoop.run_until_complete at 0x00000144FF943490>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 628, in run_until_complete
+    self.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x00000144FF943400>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 595, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x00000144FF944F70>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1881, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x00000144FF8988B0>
+    -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+
+> File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 385, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+                   |   |    |      |    |        |    -> <function RequestResponseCycle.send at 0x00000144FFD00280>
+                   |   |    |      |    |        -> <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2B8A110>
+                   |   |    |      |    -> <function RequestResponseCycle.receive at 0x00000144FFD00310>
+                   |   |    |      -> <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2B8A110>
+                   |   |    -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+                   |   -> <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2B8A110>
+                   -> <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000144FFD7E4A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+                 |    |   |      |        -> <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2...
+                 |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+                 |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+                 |    -> <fastapi.applications.FastAPI object at 0x00000144FFCA76A0>
+                 -> <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000144FFD7E4A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+                           |      |        -> <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2...
+                           |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+                           -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+          |    |                |      |        -> <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2...
+          |    |                |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |                -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+          |    -> <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000144A2B39300>
+          -> <fastapi.applications.FastAPI object at 0x00000144FFCA76A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+          |    |   |      |        -> <function ServerErrorMiddleware.__call__.<locals>._send at 0x00000144A2B5A560>
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+          |    -> <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0>
+          -> <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000144A2B39300>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          |    |               |      |        |                     -> Headers({'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple...
+          |    |               |      |        -> <function ServerErrorMiddleware.__call__.<locals>._send at 0x00000144A2B5A560>
+          |    |               |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |               -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+          |    -> <function CORSMiddleware.simple_response at 0x0000014481AA7E20>
+          -> <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+          |    |   |      |        -> functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0...
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+          |    -> <starlette.exceptions.ExceptionMiddleware object at 0x00000144A2B39240>
+          -> <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+          |    |   |      |        -> <function ExceptionMiddleware.__call__.<locals>.sender at 0x00000144A2B5A5F0>
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+          |    -> <fastapi.routing.APIRouter object at 0x00000144A2B38640>
+          -> <starlette.exceptions.ExceptionMiddleware object at 0x00000144A2B39240>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+          |     |      |      |        -> <function ExceptionMiddleware.__call__.<locals>.sender at 0x00000144A2B5A5F0>
+          |     |      |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |     |      -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+          |     -> <function Route.handle at 0x0000014481A3D870>
+          -> <fastapi.routing.APIRoute object at 0x00000144A2B3BE50>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+          |    |   |      |        -> <function ExceptionMiddleware.__call__.<locals>.sender at 0x00000144A2B5A5F0>
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59643), 'scheme': 'http', 'met...
+          |    -> <function request_response.<locals>.app at 0x00000144A2B59AB0>
+          -> <fastapi.routing.APIRoute object at 0x00000144A2B3BE50>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+                     |    -> <starlette.requests.Request object at 0x00000144A2B89CF0>
+                     -> <function get_request_handler.<locals>.app at 0x00000144A2B59A20>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+                         -> <function run_endpoint_function at 0x0000014481A3ECB0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+                 |                 |         |       -> {'name': 'ref', 'start': 900.0, 'end': 1700.0, 'repeat': 5.0}
+                 |                 |         -> <function custom_config at 0x00000144A2B59990>
+                 |                 -> <fastapi.dependencies.models.Dependant object at 0x00000144A2B3BF40>
+                 -> <function run_in_threadpool at 0x00000144818789D0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+                 |    |                     |      -> (functools.partial(<function custom_config at 0x00000144A2B59990>, name='ref', start=900.0, end=1700.0, repeat=5.0),)
+                 |    |                     -> <built-in method run of _contextvars.Context object at 0x00000144A2B98A80>
+                 |    -> <function BaseEventLoop.run_in_executor at 0x00000144FF943C70>
+                 -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             |        |            -> None
+             |        -> None
+             -> None
+
+  File "C:\Users\Elico\Desktop\Raman_Spec\app\.\main.py", line 208, in custom_config
+    spectra = dectector.ccd_df.to_json(orient='records')
+
+NameError: name 'dectector' is not defined
+
+2022-04-19 13:57:28.880 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:59644 - "GET /scanReferrenceData?name=ref&start=900&end=1700&repeat=5 HTTP/1.1" 500
+2022-04-19 13:57:28.881 | ERROR    | uvicorn.protocols.http.httptools_impl:run_asgi:388 - Exception in ASGI application
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               |     |   -> 300
+               |     -> 3
+               -> <function _main at 0x00000144FF12FC70>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           |    |          -> 300
+           |    -> <function BaseProcess._bootstrap at 0x00000144FF08A4D0>
+           -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 315, in _bootstrap
+    self.run()
+    |    -> <function BaseProcess.run at 0x00000144FF089B40>
+    -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    |    |        |    |        |    -> {'config': <uvicorn.config.Config object at 0x00000144FECBA8C0>, 'target': <bound method Server.run of <uvicorn.main.Server o...
+    |    |        |    |        -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+    |    |        |    -> ()
+    |    |        -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+    |    -> <function subprocess_started at 0x00000144FFC5E560>
+    -> <SpawnProcess name='SpawnProcess-1' parent=30008 started>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\subprocess.py", line 61, in subprocess_started
+    target(sockets=sockets)
+    |              -> [<socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    -> <bound method Server.run of <uvicorn.main.Server object at 0x00000144FECBA890>>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\main.py", line 382, in run
+    loop.run_until_complete(self.serve(sockets=sockets))
+    |    |                  |    |             -> [<socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    |    |                  |    -> <function Server.serve at 0x00000144FFCA3F40>
+    |    |                  -> <uvicorn.main.Server object at 0x00000144FECBA890>
+    |    -> <function BaseEventLoop.run_until_complete at 0x00000144FF943490>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 628, in run_until_complete
+    self.run_forever()
+    |    -> <function BaseEventLoop.run_forever at 0x00000144FF943400>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 595, in run_forever
+    self._run_once()
+    |    -> <function BaseEventLoop._run_once at 0x00000144FF944F70>
+    -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1881, in _run_once
+    handle._run()
+    |      -> <function Handle._run at 0x00000144FF8988B0>
+    -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    |    |            |    |           |    -> <member '_args' of 'Handle' objects>
+    |    |            |    |           -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+    |    |            |    -> <member '_callback' of 'Handle' objects>
+    |    |            -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+    |    -> <member '_context' of 'Handle' objects>
+    -> <Handle Task.task_wakeup(<Future finis...not defined")>)>
+
+> File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 385, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+                   |   |    |      |    |        |    -> <function RequestResponseCycle.send at 0x00000144FFD00280>
+                   |   |    |      |    |        -> <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2B8AFE0>
+                   |   |    |      |    -> <function RequestResponseCycle.receive at 0x00000144FFD00310>
+                   |   |    |      -> <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2B8AFE0>
+                   |   |    -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+                   |   -> <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2B8AFE0>
+                   -> <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000144FFD7E4A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+                 |    |   |      |        -> <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2...
+                 |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+                 |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+                 |    -> <fastapi.applications.FastAPI object at 0x00000144FFCA76A0>
+                 -> <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000144FFD7E4A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+                           |      |        -> <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2...
+                           |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+                           -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+          |    |                |      |        -> <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000144A2...
+          |    |                |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |                -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+          |    -> <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000144A2B39300>
+          -> <fastapi.applications.FastAPI object at 0x00000144FFCA76A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+          |    |   |      |        -> <function ServerErrorMiddleware.__call__.<locals>._send at 0x00000144A2E20160>
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+          |    -> <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0>
+          -> <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000144A2B39300>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 86, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          |    |               |      |        |                     -> Headers({'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple...
+          |    |               |      |        -> <function ServerErrorMiddleware.__call__.<locals>._send at 0x00000144A2E20160>
+          |    |               |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |               -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+          |    -> <function CORSMiddleware.simple_response at 0x0000014481AA7E20>
+          -> <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 142, in simple_response
+    await self.app(scope, receive, send)
+          |    |   |      |        -> functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0...
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+          |    -> <starlette.exceptions.ExceptionMiddleware object at 0x00000144A2B39240>
+          -> <starlette.middleware.cors.CORSMiddleware object at 0x00000144A2B392A0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+          |    |   |      |        -> <function ExceptionMiddleware.__call__.<locals>.sender at 0x00000144A2E200D0>
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+          |    -> <fastapi.routing.APIRouter object at 0x00000144A2B38640>
+          -> <starlette.exceptions.ExceptionMiddleware object at 0x00000144A2B39240>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+          |     |      |      |        -> <function ExceptionMiddleware.__call__.<locals>.sender at 0x00000144A2E200D0>
+          |     |      |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |     |      -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+          |     -> <function Route.handle at 0x0000014481A3D870>
+          -> <fastapi.routing.APIRoute object at 0x00000144A2B3BE50>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+          |    |   |      |        -> <function ExceptionMiddleware.__call__.<locals>.sender at 0x00000144A2E200D0>
+          |    |   |      -> <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000014...
+          |    |   -> {'type': 'http', 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'client': ('127.0.0.1', 59644), 'scheme': 'http', 'met...
+          |    -> <function request_response.<locals>.app at 0x00000144A2B59AB0>
+          -> <fastapi.routing.APIRoute object at 0x00000144A2B3BE50>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+                     |    -> <starlette.requests.Request object at 0x00000144A2B8B280>
+                     -> <function get_request_handler.<locals>.app at 0x00000144A2B59A20>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+                         -> <function run_endpoint_function at 0x0000014481A3ECB0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 150, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+                 |                 |         |       -> {'name': 'ref', 'start': 900.0, 'end': 1700.0, 'repeat': 5.0}
+                 |                 |         -> <function custom_config at 0x00000144A2B59990>
+                 |                 -> <fastapi.dependencies.models.Dependant object at 0x00000144A2B3BF40>
+                 -> <function run_in_threadpool at 0x00000144818789D0>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await loop.run_in_executor(None, func, *args)
+                 |    |                     |      -> (functools.partial(<function custom_config at 0x00000144A2B59990>, name='ref', start=900.0, end=1700.0, repeat=5.0),)
+                 |    |                     -> <built-in method run of _contextvars.Context object at 0x00000144A2B6CA80>
+                 |    -> <function BaseEventLoop.run_in_executor at 0x00000144FF943C70>
+                 -> <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Elico\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             |        |            -> None
+             |        -> None
+             -> None
+
+  File "C:\Users\Elico\Desktop\Raman_Spec\app\.\main.py", line 208, in custom_config
+    spectra = dectector.ccd_df.to_json(orient='records')
+
+NameError: name 'dectector' is not defined
+
+2022-04-19 14:18:10.966 | INFO     | uvicorn.main:shutdown:527 - Shutting down
+2022-04-19 15:31:05.794 | INFO     | uvicorn.main:serve:397 - Started server process [21836]
+2022-04-19 15:31:05.794 | INFO     | uvicorn.lifespan.on:startup:22 - Waiting for application startup.
+2022-04-19 15:31:05.794 | INFO     | uvicorn.lifespan.on:startup:34 - Application startup complete.
+2022-04-19 15:33:39.109 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56766 - "GET /userValidation?userName=admin&password=admin HTTP/1.1" 200
+2022-04-19 15:33:39.132 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56766 - "GET /sensorTest HTTP/1.1" 404
+2022-04-19 15:34:29.833 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56770 - "GET /sensorTest HTTP/1.1" 404
+2022-04-19 15:39:24.527 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56785 - "GET /allModels?parentName=Dairy&childName=Milk HTTP/1.1" 200
+2022-04-19 15:40:45.182 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56804 - "GET /sensorTest HTTP/1.1" 404
+2022-04-19 15:42:12.666 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56813 - "GET /sensorTest HTTP/1.1" 404
+2022-04-19 15:42:29.054 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56817 - "GET /allModels?parentName=Dairy&childName=Milk HTTP/1.1" 200
+2022-04-19 15:42:59.941 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56824 - "GET /sensorTest HTTP/1.1" 404
+2022-04-19 15:43:29.006 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56829 - "POST /uploadFile HTTP/1.1" 200
+2022-04-19 15:44:34.418 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56837 - "OPTIONS /SNV?parentName=Dairy&childName=Milk&sample=Test1 HTTP/1.1" 200
+2022-04-19 15:44:34.594 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56837 - "POST /SNV?parentName=Dairy&childName=Milk&sample=Test1 HTTP/1.1" 200
+2022-04-19 15:45:09.647 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56838 - "OPTIONS /savitzkyGolay?parentName=Dairy&childName=Milk&sample=Test123&derivative=1&polynomial=1&window=5 HTTP/1.1" 200
+2022-04-19 15:45:09.839 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56838 - "POST /savitzkyGolay?parentName=Dairy&childName=Milk&sample=Test123&derivative=1&polynomial=1&window=5 HTTP/1.1" 200
+2022-04-19 15:45:21.349 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56839 - "POST /savitzkyGolay?parentName=Dairy&childName=Milk&sample=Test123&derivative=1&polynomial=1&window=5 HTTP/1.1" 200
+2022-04-19 15:45:30.550 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56847 - "OPTIONS /SNV?parentName=Dairy&childName=Milk&sample=test111 HTTP/1.1" 200
+2022-04-19 15:45:30.712 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56847 - "POST /SNV?parentName=Dairy&childName=Milk&sample=test111 HTTP/1.1" 200
+2022-04-19 15:45:33.616 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56847 - "OPTIONS /savitzkyGolay?parentName=Dairy&childName=Milk&sample=test111&derivative=1&polynomial=1&window=5 HTTP/1.1" 200
+2022-04-19 15:45:33.774 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56848 - "POST /savitzkyGolay?parentName=Dairy&childName=Milk&sample=test111&derivative=1&polynomial=1&window=5 HTTP/1.1" 200
+2022-04-19 15:46:11.989 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56853 - "OPTIONS /plsAlgoritm?parentName=Dairy&childName=Milk&sample=test111&scatterCorrection=SNV&window=5&ploynomial=1&derivative=1 HTTP/1.1" 200
+2022-04-19 15:46:12.658 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56853 - "POST /plsAlgoritm?parentName=Dairy&childName=Milk&sample=test111&scatterCorrection=SNV&window=5&ploynomial=1&derivative=1 HTTP/1.1" 200
+2022-04-19 15:50:49.647 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56881 - "GET /allModels?parentName=Dairy&childName=Milk HTTP/1.1" 200
+2022-04-19 15:51:00.930 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56883 - "POST /uploadFilePred?parent=Dairy&child=Milk&model=test111_plsmodel HTTP/1.1" 200
+2022-04-19 15:51:09.062 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56888 - "GET /allMetricFiles?parentName=Dairy&childName=Milk HTTP/1.1" 200
+2022-04-19 15:51:10.730 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56888 - "GET /metrics?parentName=Dairy&childName=Milk&model=test111_plsmodel HTTP/1.1" 200
+2022-04-19 16:00:50.113 | INFO     | uvicorn.protocols.http.httptools_impl:send:447 - 127.0.0.1:56961 - "GET /allModels?parentName=Pharma&childName=Blending HTTP/1.1" 200
+2022-04-25 08:44:55.462 | INFO     | uvicorn.main:shutdown:527 - Shutting down
