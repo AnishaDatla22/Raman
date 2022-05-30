@@ -11,7 +11,6 @@ from Format_data import *
 from Pretreatment import *
 from Sensor.ccd_driver import *
 from NIR_Software.authentication.auth import Auth
-from NIR_Software.sensor.scan import Scan
 from Analysis import *
 from Models import *
 from Parameters import *
@@ -194,17 +193,45 @@ def upload_file(file: UploadFile = File(...)):
 #-------------------------------Sensor Functions-----------------------------------------
 #**********************************************************************************************
 
-@app.get("/scanReferrenceData",tags=['Sensor Controller'])
-def custom_config(name:str,start: float,end: float, repeat: float):
+@app.get("/scanData",tags=['Sensor Controller'])
+#def custom_config(name:str,start: float,end: float, repeat: float):
+def custon_config(name: str,gain: float,offset: float,cLine: float, eTime: float, cFrame: float, lTemp: float):
+
 
     detector = CCD()
+    if cFrame in range(MIN_FRAME_COUNT,MAX_FRAME_COUNT):
+        detector.cFrameCount.value = cFrame
+    else:
+        detector.cFrameCount.value = MAX_FRAME_COUNT
 
-    detector.cFrameCount.value = 10
+    if gain in range(MIN_GAIN,MAX_GAIN):
+        detector.nGain = gain
+    else:
+        detctor.nGain = MIN_GAIN
+
+    if offset in range(MIN_OFFSET,MAX_OFFSET):
+        detector.nOffset = Offset
+    else:
+        detector.nOffset = MIN_OFFSET
+
+    if cLine in range(MIN_LINE_COUNT,MAX_LINE_COUNT):
+        detector.nLineCount = cLine
+    else:
+        detctor.nLineCount = MIN_LINE_COUNT
+
+    #if lTemp in range(MIN_TEMP,MAX_TEMP):
+    #    laser.nTemp = lTemp
+    #else
+    #    laser.nTemp = MIN_TEMP
+
+
+
     print(detector.cFrameCount.value)
     status = detector.Connect_CCD()
     if status == 0:
         detector.Capture_CCD()
     print("Connect Status: "+str(status))
+    print(detector.ccd_df)
     spectra = dectector.ccd_df.to_json(orient='records')
     return spectra
 

@@ -43,8 +43,23 @@ from starlette.requests import Request
 
 
 
-VID = 0x0451
-PID = 0x4200
+MAX_FRAME_COUNT = 10
+MIN_FRAME_COUNT = 1
+
+MAX_GAIN = 10
+MIN_GAIN = 1
+
+MAX_OFFSET = 365
+MIN_OFFSET = 0
+
+MAX_LINE_COUNT = 32
+MIN_LINE_COUNT = 1
+
+MAX_TEMP = 25.5
+MIN_TEMP = 25.0
+
+MAX_EXPOSURE = 1000
+MIN_EXPOSURE = 200
 
 
 #***************************************************
